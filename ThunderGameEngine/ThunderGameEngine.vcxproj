@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{a4e3a8b4-d25c-45ae-a514-3d0cf9b7fb5b}</ProjectGuid>
+    <RootNamespace>ThunderGameEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Users\busch\OneDrive - Iowa Central Community College\Computer_Code\ThunderGameEngine\ThunderGameEngine\Thunder\Vendor\glm\glm-0.9.9.8\glm-0.9.9.8;C:\Users\busch\OneDrive - Iowa Central Community College\Computer_Code\ThunderGameEngine\ThunderGameEngine\Thunder\Vendor\GLEW\glew-2.1.0-win32\glew-2.1.0\include;C:\Users\busch\OneDrive - Iowa Central Community College\Computer_Code\ThunderGameEngine\ThunderGameEngine\Thunder\Vendor\glfw-3.3.8.bin.WIN64\glfw-3.3.8.bin.WIN64\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\Users\busch\OneDrive - Iowa Central Community College\Computer_Code\ThunderGameEngine\ThunderGameEngine\Thunder\Vendor\glm\glm-0.9.9.8\glm-0.9.9.8;C:\Users\busch\OneDrive - Iowa Central Community College\Computer_Code\ThunderGameEngine\ThunderGameEngine\Thunder\Vendor\GLEW\glew-2.1.0-win32\glew-2.1.0\include;C:\Users\busch\OneDrive - Iowa Central Community College\Computer_Code\ThunderGameEngine\ThunderGameEngine\Thunder\Vendor\glfw-3.3.8.bin.WIN64\glfw-3.3.8.bin.WIN64\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\busch\OneDrive - Iowa Central Community College\Computer_Code\ThunderGameEngine\ThunderGameEngine\Thunder\Vendor\GLEW\glew-2.1.0-win32\glew-2.1.0\lib\Release\x64;C:\Users\busch\OneDrive - Iowa Central Community College\Computer_Code\ThunderGameEngine\ThunderGameEngine\Thunder\Vendor\glfw-3.3.8.bin.WIN64\glfw-3.3.8.bin.WIN64\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\busch\OneDrive - Iowa Central Community College\Computer_Code\ThunderGameEngine\ThunderGameEngine\Thunder\Vendor\GLEW\glew-2.1.0-win32\glew-2.1.0\lib\Release\x64;C:\Users\busch\OneDrive - Iowa Central Community College\Computer_Code\ThunderGameEngine\ThunderGameEngine\Thunder\Vendor\glfw-3.3.8.bin.WIN64\glfw-3.3.8.bin.WIN64\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Thunder\src\ECS\Component.h" />
+    <ClInclude Include="Thunder\src\ECS\ComponentManager.h" />
+    <ClInclude Include="Thunder\src\ECS\Entity.h" />
+    <ClInclude Include="Thunder\src\ECS\EntityManager.h" />
+    <ClInclude Include="Thunder\src\ECS\RenderComponent2D.h" />
+    <ClInclude Include="Thunder\src\ECS\RenderSystem2D.h" />
+    <ClInclude Include="Thunder\src\Renderer\ElementBuffer.h" />
+    <ClInclude Include="Thunder\src\Renderer\Renderer.h" />
+    <ClInclude Include="Thunder\src\Renderer\Shader.h" />
+    <ClInclude Include="Thunder\src\Renderer\VertexArray.h" />
+    <ClInclude Include="Thunder\src\Renderer\VertexAttribute.h" />
+    <ClInclude Include="Thunder\src\Renderer\VertexBuffer.h" />
+    <ClInclude Include="Thunder\src\Renderer\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Thunder\src\ECS\Entity.cpp" />
+    <ClCompile Include="Thunder\src\ECS\EntityManager.cpp" />
+    <ClCompile Include="Thunder\src\ECS\RenderSystem2D.cpp" />
+    <ClCompile Include="Thunder\src\main.cpp" />
+    <ClCompile Include="Thunder\src\Renderer\ElementBuffer.cpp" />
+    <ClCompile Include="Thunder\src\Renderer\Renderer.cpp" />
+    <ClCompile Include="Thunder\src\Renderer\Shader.cpp" />
+    <ClCompile Include="Thunder\src\Renderer\VertexArray.cpp" />
+    <ClCompile Include="Thunder\src\Renderer\VertexAttribute.cpp" />
+    <ClCompile Include="Thunder\src\Renderer\VertexBuffer.cpp" />
+    <ClCompile Include="Thunder\src\Renderer\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Thunder\src\Renderer\fragment_shader.frag" />
+    <None Include="Thunder\src\Renderer\vertex_shader.vert" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
