@@ -4,6 +4,10 @@
 #include "ComponentManager.h"
 #include "RenderComponent2D.h"
 #include "../Renderer/Shader.h"
+#include "../Renderer/VertexArray.h"
+#include "../Renderer/VertexBuffer.h"
+#include "../Renderer/VertexAttribute.h"
+#include "../Renderer/ElementBuffer.h"
 #include <vector>
 
 class RenderSystem2D {

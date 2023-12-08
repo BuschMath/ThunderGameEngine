@@ -1,23 +1,48 @@
 
-const char* vertexShaderLoc = "C:/Users/busch/OneDrive - Iowa Central Community College/Computer_Code/ThunderGameEngine/ThunderGameEngine/Thunder/src/Renderer/vertex_shader.vert";
-const char* fragmentShaderLoc = "C:/Users/busch/OneDrive - Iowa Central Community College/Computer_Code/ThunderGameEngine/ThunderGameEngine/Thunder/src/Renderer/fragment_shader.frag";
-
-#include "Renderer/Renderer.h"
-#include "Renderer/Window.h"
+#include "Engine.h"
+#include "ECS/RenderComponent2D.h"
 
 int main() {
-    Window window(800, 600, "Thunder Engine");
-    Renderer renderer;
-    renderer.setShaders(vertexShaderLoc, fragmentShaderLoc);
+    
+    std::vector<glm::vec2> vertices = {
+		glm::vec2(-0.5f, -0.5f),
+		glm::vec2(0.5f, -0.5f),
+		glm::vec2(0.5f, 0.5f),
+		glm::vec2(-0.5f, 0.5f)
+	};
 
-    while (window.IsOpen()) {
-        window.ProcessInput();
+    std::vector<GLuint> indices = {
+		0, 1, 2,
+		2, 3, 0
+	};
 
-        renderer.Clear();
-        renderer.Draw();
-        renderer.SwapBuffers(window.GetGLFWwindow());
-        window.PollEvents();
-    }
+	glm::vec4 color = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+
+    RenderComponent2D component(vertices, indices, color);
+
+	std::vector<glm::vec2> triangleVertices = {
+		glm::vec2(-0.5f, -0.5f),
+		glm::vec2(0.5f, -0.5f),
+		glm::vec2(0.0f, 0.5f)
+	};
+
+	std::vector<GLuint> triangleIndices = {
+		0, 1, 2
+	};
+
+	glm::vec4 triangleColor = glm::vec4(0.0f, 1.0f, 0.0f, 1.0f);
+
+	RenderComponent2D triangleComponent(triangleVertices, triangleIndices, triangleColor);
+
+    Engine engine(800, 600, "Thunder Game Engine");
+
+	Entity entity = engine.CreateEntity();
+	Entity triangleEntity = engine.CreateEntity();
+
+	engine.AddComponent(entity, component);
+	engine.AddComponent(triangleEntity, triangleComponent);
+
+    engine.Run();
 
     return 0;
 }

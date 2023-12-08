@@ -2,7 +2,9 @@
 #ifndef COMPONENTMANAGER_H
 #define COMPONENTMANAGER_H
 
+#include <iostream>
 #include <unordered_map>
+#include <typeinfo>
 #include <typeindex>
 #include <memory>
 #include <stdexcept>
@@ -42,7 +44,8 @@ public:
 
     template<typename T>
     std::vector<Entity> GetAllEntitiesWithComponent() {
-    std::vector<Entity> entities;
+        std::vector<Entity> entities;
+//std::cout << "type_index: " << std::type_index(typeid(T)).name() << std::endl;
         for(auto& component : components[std::type_index(typeid(T))]) {
             Entity::ID id = component.first;
             Entity entity(id);

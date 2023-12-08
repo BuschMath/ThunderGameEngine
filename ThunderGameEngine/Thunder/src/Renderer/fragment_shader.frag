@@ -1,6 +1,13 @@
 #version 330 core
-out vec4 FragColor;
 
-void main() {
-    FragColor = vec4(1.0, 0.5, 0.2, 1.0); // orange color
+// Interpolated color data from the vertex shader.
+in vec3 fragmentColor;
+
+// Output data
+out vec4 color;
+
+// Main function
+void main(){
+    // Set the output color of our current pixel
+    color = vec4(fragmentColor, 1.0);
 }
