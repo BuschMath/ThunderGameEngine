@@ -1,10 +1,15 @@
 #include "RenderSystem2D.h"
 const int noDimPerVertex = 7;
 
+RenderSystem2D::RenderSystem2D(ComponentManager& componentManager, Shader& shader)
+    : RenderSystem(componentManager, shader)
+{
+}
+
 void RenderSystem2D::Update() {
     // Iterate through all entities that have a RenderComponent2D
     // This example assumes you have a way to get such entities
-    std::vector<Entity> entities = componentManager.GetAllEntitiesWithComponent<RenderComponent2D>();
+    std::vector<Entity> entities = GetComponentManager().GetAllEntitiesWithComponent<RenderComponent2D>();
     for (const Entity& entity : entities) {
         RenderEntity(entity);
     }
@@ -12,7 +17,7 @@ void RenderSystem2D::Update() {
 
 void RenderSystem2D::RenderEntity(const Entity& entity) {
     // Get the RenderComponent2D of the entity
-    const RenderComponent2D& renderComponent = componentManager.GetComponent<RenderComponent2D>(entity);
+    const RenderComponent2D& renderComponent = GetComponentManager().GetComponent<RenderComponent2D>(entity);
 
     int vertSize = renderComponent.vertices.size() * noDimPerVertex;
     float* r_vertices = new float[vertSize];
@@ -41,7 +46,7 @@ void RenderSystem2D::RenderEntity(const Entity& entity) {
     VertexAttribute positionAttrib(0, 3, GL_FLOAT, GL_FALSE, noDimPerVertex * sizeof(float), (void*)0);
     VertexAttribute colorAttrib(1, 4, GL_FLOAT, GL_FALSE, noDimPerVertex * sizeof(float), (void*)(3 * sizeof(float)));
 
-    shader.Use();
+    GetShader().Use();
     vao.Bind();
     vao.AddAttribute(positionAttrib);
     vao.AddAttribute(colorAttrib);

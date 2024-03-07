@@ -12,7 +12,7 @@ Renderer::Renderer() {
     }
 
     shader = nullptr;
-    renderSystem2D = nullptr;
+    renderSystem = nullptr;
 
     std::cout << "OpenGL version: " << glGetString(GL_VERSION) << std::endl;
 }
@@ -24,7 +24,7 @@ void Renderer::Clear() const {
 
 void Renderer::Draw() const {
     // Implement drawing code here
-    renderSystem2D->Update();
+    renderSystem->Update();
 }
 
 void Renderer::SwapBuffers(GLFWwindow* window) const {
@@ -42,7 +42,12 @@ void Renderer::setComponentManager(ComponentManager* componentManager)
     p_componentManager = componentManager;
 }
 
+void Renderer::setRenderSystem()
+{
+	renderSystem = new RenderSystem(*p_componentManager, *shader);
+}
+
 void Renderer::setRenderSystem2D()
 {
-	renderSystem2D = new RenderSystem2D(*p_componentManager, *shader);
+    renderSystem = new RenderSystem2D(*p_componentManager, *shader);
 }

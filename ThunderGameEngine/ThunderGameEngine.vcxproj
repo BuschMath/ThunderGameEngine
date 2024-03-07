@@ -142,7 +142,10 @@
     <ClInclude Include="Thunder\src\ECS\Entity.h" />
     <ClInclude Include="Thunder\src\ECS\EntityManager.h" />
     <ClInclude Include="Thunder\src\ECS\RenderComponent2D.h" />
+    <ClInclude Include="Thunder\src\ECS\RenderComponent3D.h" />
+    <ClInclude Include="Thunder\src\ECS\RenderSystem.h" />
     <ClInclude Include="Thunder\src\ECS\RenderSystem2D.h" />
+    <ClInclude Include="Thunder\src\ECS\RenderSystem3D.h" />
     <ClInclude Include="Thunder\src\Engine.h" />
     <ClInclude Include="Thunder\src\Renderer\ElementBuffer.h" />
     <ClInclude Include="Thunder\src\Renderer\Renderer.h" />
@@ -155,6 +158,7 @@
   <ItemGroup>
     <ClCompile Include="Thunder\src\ECS\Entity.cpp" />
     <ClCompile Include="Thunder\src\ECS\EntityManager.cpp" />
+    <ClCompile Include="Thunder\src\ECS\RenderSystem.cpp" />
     <ClCompile Include="Thunder\src\ECS\RenderSystem2D.cpp" />
     <ClCompile Include="Thunder\src\Engine.cpp" />
     <ClCompile Include="Thunder\src\main.cpp" />

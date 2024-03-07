@@ -4,6 +4,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include "Shader.h"
+#include "../ECS/RenderSystem.h"
 #include "../ECS/RenderSystem2D.h"
 
 class Renderer {
@@ -15,11 +16,12 @@ public:
 
     void setShaders(const char* vertexShader, const char* fragmentShader);
     void setComponentManager(ComponentManager* componentManager);
+    void setRenderSystem();
     void setRenderSystem2D();
 
 private:
     Shader* shader;
-    RenderSystem2D* renderSystem2D;
+    RenderSystem* renderSystem;
     ComponentManager* p_componentManager;
 };
 
