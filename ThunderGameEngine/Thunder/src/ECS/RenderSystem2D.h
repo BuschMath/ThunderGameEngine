@@ -15,7 +15,7 @@ class RenderSystem2D : public RenderSystem {
 public:
     RenderSystem2D(ComponentManager& componentManager, Shader& shader);
 
-    void Update() override; // Call this function every frame
+    //void Update() override; // Call this function every frame
 
 private:
     //ComponentManager& componentManager;

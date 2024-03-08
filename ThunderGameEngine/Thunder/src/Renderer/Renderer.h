@@ -18,8 +18,6 @@ public:
     void setShaders(const char* vertexShader, const char* fragmentShader);
     void setComponentManager(ComponentManager* componentManager);
     void setRenderSystem();
-    void setRenderSystem2D();
-    void setRenderSystem3D();
 
 private:
     Shader* shader;

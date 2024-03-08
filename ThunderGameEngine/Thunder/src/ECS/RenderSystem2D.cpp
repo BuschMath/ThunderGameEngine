@@ -6,14 +6,14 @@ RenderSystem2D::RenderSystem2D(ComponentManager& componentManager, Shader& shade
 {
 }
 
-void RenderSystem2D::Update() {
+/*void RenderSystem2D::Update() {
     // Iterate through all entities that have a RenderComponent2D
     // This example assumes you have a way to get such entities
     std::vector<Entity> entities = GetComponentManager().GetAllEntitiesWithComponent<RenderComponent2D>();
     for (const Entity& entity : entities) {
         RenderEntity(entity);
     }
-}
+}*/
 
 void RenderSystem2D::RenderEntity(const Entity& entity) {
     // Get the RenderComponent2D of the entity

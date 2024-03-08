@@ -6,14 +6,14 @@ RenderSystem3D::RenderSystem3D(ComponentManager& componentManager, Shader& shade
 {
 }
 
-void RenderSystem3D::Update() {
+/*void RenderSystem3D::Update() {
     // Iterate through all entities that have a RenderComponent3D
     // This example assumes you have a way to get such entities
     std::vector<Entity> entities = GetComponentManager().GetAllEntitiesWithComponent<RenderComponent3D>();
     for (const Entity& entity : entities) {
         RenderEntity(entity);
     }
-}
+}*/
 
 void RenderSystem3D::RenderEntity(const Entity& entity) {
     // Get the RenderComponent3D of the entity

@@ -46,13 +46,3 @@ void Renderer::setRenderSystem()
 {
 	renderSystem = new RenderSystem(*p_componentManager, *shader);
 }
-
-void Renderer::setRenderSystem2D()
-{
-    renderSystem = new RenderSystem2D(*p_componentManager, *shader);
-}
-
-void Renderer::setRenderSystem3D()
-{
-    renderSystem = new RenderSystem3D(*p_componentManager, *shader);
-}

@@ -13,7 +13,7 @@ class RenderSystem3D : public RenderSystem {
 public:
     RenderSystem3D(ComponentManager& componentManager, Shader& shader);
 
-    void Update() override; // Call this function every frame
+    //void Update() override; // Call this function every frame
 
 private:
     void RenderEntity(const Entity& entity); // Helper function for rendering a single entity
