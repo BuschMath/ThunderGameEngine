@@ -13,7 +13,7 @@ Engine::Engine(int winHeight, int winWidth, const char* winTitle) : m_winHeight(
     p_entityManager = new EntityManager();
     p_componentManager = new ComponentManager();
     p_renderer->setComponentManager(p_componentManager);
-    p_renderer->setRenderSystem2D();
+    p_renderer->setRenderSystem3D();
 }
 
 Engine::~Engine()

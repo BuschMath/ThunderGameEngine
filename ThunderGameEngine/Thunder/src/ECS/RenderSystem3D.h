@@ -16,9 +16,6 @@ public:
     void Update() override; // Call this function every frame
 
 private:
-    //ComponentManager& componentManager;
-    //Shader& shader; // Assume a basic shader for 3D rendering
-
     void RenderEntity(const Entity& entity); // Helper function for rendering a single entity
 };
 

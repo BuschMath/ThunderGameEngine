@@ -160,6 +160,7 @@
     <ClCompile Include="Thunder\src\ECS\EntityManager.cpp" />
     <ClCompile Include="Thunder\src\ECS\RenderSystem.cpp" />
     <ClCompile Include="Thunder\src\ECS\RenderSystem2D.cpp" />
+    <ClCompile Include="Thunder\src\ECS\RenderSystem3D.cpp" />
     <ClCompile Include="Thunder\src\Engine.cpp" />
     <ClCompile Include="Thunder\src\main.cpp" />
     <ClCompile Include="Thunder\src\Renderer\ElementBuffer.cpp" />

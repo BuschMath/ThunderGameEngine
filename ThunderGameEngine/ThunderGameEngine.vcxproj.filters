@@ -107,6 +107,9 @@
     <ClCompile Include="Thunder\src\ECS\RenderSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Thunder\src\ECS\RenderSystem3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Thunder\src\Renderer\vertex_shader.vert" />

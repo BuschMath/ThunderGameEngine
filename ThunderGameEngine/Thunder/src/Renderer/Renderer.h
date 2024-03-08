@@ -6,6 +6,7 @@
 #include "Shader.h"
 #include "../ECS/RenderSystem.h"
 #include "../ECS/RenderSystem2D.h"
+#include "../ECS/RenderSystem3D.h"
 
 class Renderer {
 public:
@@ -18,6 +19,7 @@ public:
     void setComponentManager(ComponentManager* componentManager);
     void setRenderSystem();
     void setRenderSystem2D();
+    void setRenderSystem3D();
 
 private:
     Shader* shader;
