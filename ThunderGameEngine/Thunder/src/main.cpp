@@ -52,9 +52,8 @@ int main() {
 	engine.AddComponent(object, objectRender);
 	engine.AddComponent(object, objectTransform);
 
-	Entity camera = engine.CreateEntity();
-	engine.AddComponent(camera, CameraComponent(60, 800.0f/600.0f, 0.1, 1000));
-	engine.AddComponent(camera, TransformComponent(glm::vec3(1, 1, 3), glm::quat(1.0f, 0.0f, 0.0f, 0.0f), glm::vec3(1, 1, 1)));
+	Entity camera = engine.CreateCamera(glm::vec3(1, 1, 3), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0), 
+		60.0f, 1600.0f / 1200.0f, 0.1f, 100.0f);
 
     engine.Run();
 

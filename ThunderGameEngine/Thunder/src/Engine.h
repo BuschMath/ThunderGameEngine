@@ -21,6 +21,9 @@ public:
 		p_componentManager->AddComponent(entity, componentType);
 	};
 
+	Entity CreateCamera(const glm::vec3& position, const glm::vec3& target, const glm::vec3& up,
+		float fov, float aspectRatio, float nearClip, float farClip);
+
 	void Run();
 
 private:

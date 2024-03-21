@@ -25,6 +25,30 @@ Entity Engine::CreateEntity()
     return p_entityManager->CreateEntity();
 }
 
+Entity Engine::CreateCamera(const glm::vec3& position, const glm::vec3& target, const glm::vec3& up, float fov, float aspectRatio, float nearClip, float farClip)
+{
+    // Calculate the forward, right, and up vectors
+    glm::vec3 forward = glm::normalize(target - position);
+    glm::vec3 right = glm::normalize(glm::cross(forward, up));
+    glm::vec3 cameraUp = glm::cross(right, forward);
+
+    // Create the lookAt matrix
+    glm::mat4 lookAtMatrix = glm::mat4(1.0f);
+    lookAtMatrix[0] = glm::vec4(right, 0.0f);
+    lookAtMatrix[1] = glm::vec4(cameraUp, 0.0f);
+    lookAtMatrix[2] = glm::vec4(-forward, 0.0f);
+
+    // Convert the lookAt matrix into a quaternion
+    glm::quat rotationQuaternion = glm::quat_cast(lookAtMatrix);
+
+    // Create the camera entity
+    Entity camera = CreateEntity();
+    AddComponent(camera, CameraComponent(fov, aspectRatio, nearClip, farClip));
+    AddComponent(camera, TransformComponent(position, rotationQuaternion, glm::vec3(1, 1, 1)));
+
+    return camera;
+}
+
 void Engine::Run()
 {
     glEnable(GL_DEPTH_TEST);
