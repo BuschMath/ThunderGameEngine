@@ -10,6 +10,27 @@ RenderSystem::~RenderSystem()
 {
 }
 
+void RenderSystem::Update()
+{
+    glm::mat4 projMatrix = glm::mat4(1.0f), vMatrix = glm::mat4(1.0f);
+    // Get all entities with a CameraComponent
+    // There should only be one camera entity
+    std::vector<Entity> cameraEntities = GetComponentManager().GetAllEntitiesWithComponent<CameraComponent>();
+    for (const Entity& entity : cameraEntities) {
+        GetComponentManager().GetComponent<CameraComponent>(entity).UpdateProjectionMatrix();
+        projMatrix = GetComponentManager().GetComponent<CameraComponent>(entity).GetProjectionMatrix();
+
+        glm::vec3 position = GetComponentManager().GetComponent<TransformComponent>(entity).GetPosition();
+        glm::quat orientation = GetComponentManager().GetComponent<TransformComponent>(entity).GetRotation();
+        vMatrix = GetComponentManager().GetComponent<CameraComponent>(entity).GetViewMatrix(position, orientation);
+    }
+    // Get all entities with a RenderComponent3D
+    std::vector<Entity> entities = GetComponentManager().GetAllEntitiesWithComponent<RenderComponent3D>();
+    for (const Entity& entity : entities) {
+        RenderEntity(entity, projMatrix, vMatrix);
+    }
+}
+
 void RenderSystem::RenderEntity(const Entity& entity, glm::mat4 projectionMatrix, glm::mat4 viewMatrix)
 {
     // Get the RenderComponent3D of the entity
