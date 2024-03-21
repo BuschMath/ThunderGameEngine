@@ -154,6 +154,8 @@
     <ClInclude Include="Thunder\src\Renderer\VertexAttribute.h" />
     <ClInclude Include="Thunder\src\Renderer\VertexBuffer.h" />
     <ClInclude Include="Thunder\src\Renderer\Window.h" />
+    <ClInclude Include="Thunder\src\Utility\TextureLoader.h" />
+    <ClInclude Include="Thunder\Vendor\stb\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Thunder\src\ECS\Entity.cpp" />
@@ -168,6 +170,7 @@
     <ClCompile Include="Thunder\src\Renderer\VertexAttribute.cpp" />
     <ClCompile Include="Thunder\src\Renderer\VertexBuffer.cpp" />
     <ClCompile Include="Thunder\src\Renderer\Window.cpp" />
+    <ClCompile Include="Thunder\src\Utility\TextureLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Thunder\src\Renderer\fragment_shader.frag" />
