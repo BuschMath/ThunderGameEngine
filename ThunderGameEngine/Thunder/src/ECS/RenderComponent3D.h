@@ -9,9 +9,10 @@
 struct RenderComponent3D : public Component {
     std::vector<glm::vec3> vertices;  // 3D vertex positions
     std::vector<GLuint> indices;      // Indices for indexed drawing
-    glm::vec4 color;                  // RGBA color
+    std::vector<glm::vec4> color;                  // RGBA color
 
-    RenderComponent3D(const std::vector<glm::vec3>& verts, const std::vector<GLuint>& inds, const glm::vec4& col)
+    RenderComponent3D(const std::vector<glm::vec3>& verts, const std::vector<GLuint>& inds, 
+        const std::vector<glm::vec4>& col)
         : vertices(verts), indices(inds), color(col) {}
 };
 

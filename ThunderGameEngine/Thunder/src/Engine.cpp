@@ -27,6 +27,8 @@ Entity Engine::CreateEntity()
 
 void Engine::Run()
 {
+    glEnable(GL_DEPTH_TEST);
+
     while (p_window->IsOpen()) {
         p_window->ProcessInput();
 

@@ -1,6 +1,8 @@
 
 #include "Engine.h"
 #include "ECS/RenderComponent3D.h"
+#include "ECS/CameraComponent.h"
+#include "ECS/TransformComponent.h"
 
 int main() {
     
@@ -9,10 +11,10 @@ int main() {
 		glm::vec3(-0.5f, -0.5f, -0.5f),	// 1
 		glm::vec3(0.5f, -0.5f, 0.5f),	// 2
 		glm::vec3(0.5f, -0.5f, -0.5f),	// 3
-		glm::vec3(-0.5f, 0.5f, 0.0f),	// 4
-		glm::vec3(-0.5f, 0.5f, -1.0f),	// 5
-		glm::vec3(0.5f, 0.5f, 0.0f),	// 6
-		glm::vec3(0.5f, 0.5f, -1.0f),	// 7
+		glm::vec3(-0.5f, 0.5f, 0.5f),	// 4
+		glm::vec3(-0.5f, 0.5f, -0.5f),	// 5
+		glm::vec3(0.5f, 0.5f, 0.5f),	// 6
+		glm::vec3(0.5f, 0.5f, -0.5f),	// 7
 	};
 
     std::vector<GLuint> indices = {
@@ -30,31 +32,29 @@ int main() {
 		5, 7, 3
 	};
 
-	glm::vec4 color = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
-
-    RenderComponent3D component(vertices, indices, color);
-
-	/*std::vector<glm::vec2> triangleVertices = {
-		glm::vec2(-0.5f, -0.5f),
-		glm::vec2(0.5f, -0.5f),
-		glm::vec2(0.0f, 0.5f)
+	std::vector<glm::vec4> color = {
+		glm::vec4(1.0f, 0.0f, 0.0f, 1.0f),
+		glm::vec4(0.0f, 1.0f, 0.0f, 1.0f),
+		glm::vec4(0.0f, 0.0f, 1.0f, 1.0f),
+		glm::vec4(1.0f, 1.0f, 0.0f, 1.0f),
+		glm::vec4(1.0f, 0.0f, 1.0f, 1.0f),
+		glm::vec4(0.0f, 1.0f, 1.0f, 1.0f),
+		glm::vec4(1.0f, 1.0f, 1.0f, 1.0f),
+		glm::vec4(0.0f, 0.0f, 0.0f, 1.0f)
 	};
 
-	std::vector<GLuint> triangleIndices = {
-		0, 1, 2
-	};
+    RenderComponent3D objectRender(vertices, indices, color);
+	TransformComponent objectTransform;
 
-	glm::vec4 triangleColor = glm::vec4(0.0f, 1.0f, 0.0f, 1.0f);
+    Engine engine(1600, 1200, "Thunder Game Engine");
 
-	RenderComponent2D triangleComponent(triangleVertices, triangleIndices, triangleColor);
-	*/
-    Engine engine(800, 600, "Thunder Game Engine");
+	Entity object = engine.CreateEntity();
+	engine.AddComponent(object, objectRender);
+	engine.AddComponent(object, objectTransform);
 
-	Entity entity = engine.CreateEntity();
-	//Entity triangleEntity = engine.CreateEntity();
-
-	engine.AddComponent(entity, component);
-	//engine.AddComponent(triangleEntity, triangleComponent);
+	Entity camera = engine.CreateEntity();
+	engine.AddComponent(camera, CameraComponent(60, 800.0f/600.0f, 0.1, 1000));
+	engine.AddComponent(camera, TransformComponent(glm::vec3(1, 1, 3), glm::quat(1.0f, 0.0f, 0.0f, 0.0f), glm::vec3(1, 1, 1)));
 
     engine.Run();
 

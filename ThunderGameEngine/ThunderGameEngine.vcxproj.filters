@@ -51,19 +51,19 @@
     <ClInclude Include="Thunder\src\ECS\ComponentManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Thunder\src\ECS\RenderSystem2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Thunder\src\Engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Thunder\src\ECS\RenderSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Thunder\src\ECS\RenderSystem3D.h">
+    <ClInclude Include="Thunder\src\ECS\RenderComponent3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Thunder\src\ECS\RenderComponent3D.h">
+    <ClInclude Include="Thunder\src\ECS\TransformComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Thunder\src\ECS\CameraComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -95,9 +95,6 @@
     <ClCompile Include="Thunder\src\ECS\EntityManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Thunder\src\ECS\RenderSystem2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Thunder\src\ECS\Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -105,9 +102,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Thunder\src\ECS\RenderSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Thunder\src\ECS\RenderSystem3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

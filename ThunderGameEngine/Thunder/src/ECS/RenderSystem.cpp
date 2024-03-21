@@ -10,7 +10,7 @@ RenderSystem::~RenderSystem()
 {
 }
 
-void RenderSystem::RenderEntity(const Entity& entity)
+void RenderSystem::RenderEntity(const Entity& entity, glm::mat4 projectionMatrix, glm::mat4 viewMatrix)
 {
     // Get the RenderComponent3D of the entity
     const RenderComponent3D& renderComponent = GetComponentManager().GetComponent<RenderComponent3D>(entity);
@@ -20,14 +20,14 @@ void RenderSystem::RenderEntity(const Entity& entity)
     int count = 0;
     // Set up your rendering logic here
     // For example, bind the shader, set up the vertex data and draw
-    for (const glm::vec3& vertex : renderComponent.vertices) {
-        r_vertices[count] = vertex.x;
-        r_vertices[count + 1] = vertex.y;
-        r_vertices[count + 2] = vertex.z;
-        r_vertices[count + 3] = renderComponent.color.r;
-        r_vertices[count + 4] = renderComponent.color.g;
-        r_vertices[count + 5] = renderComponent.color.b;
-        r_vertices[count + 6] = renderComponent.color.a;
+    for (int i = 0; i < renderComponent.vertices.size(); i++) {
+        r_vertices[count] = renderComponent.vertices[i].x;
+        r_vertices[count + 1] = renderComponent.vertices[i].y;
+        r_vertices[count + 2] = renderComponent.vertices[i].z;
+        r_vertices[count + 3] = renderComponent.color[i].r;
+        r_vertices[count + 4] = renderComponent.color[i].g;
+        r_vertices[count + 5] = renderComponent.color[i].b;
+        r_vertices[count + 6] = renderComponent.color[i].a;
         count += noDimPerVertex;
     }
 
@@ -42,7 +42,15 @@ void RenderSystem::RenderEntity(const Entity& entity)
     VertexAttribute positionAttrib(0, 3, GL_FLOAT, GL_FALSE, noDimPerVertex * sizeof(float), (void*)0);
     VertexAttribute colorAttrib(1, 4, GL_FLOAT, GL_FALSE, noDimPerVertex * sizeof(float), (void*)(3 * sizeof(float)));
 
-    GetShader().Use();
+    GLuint MVP_ID = glGetUniformLocation(m_shader.GetProgram(), "MVP");
+    glm::mat4 MVP;
+    if (GetComponentManager().HasComponent<TransformComponent>(entity))
+        MVP = projectionMatrix * viewMatrix * GetComponentManager().GetComponent<TransformComponent>(entity).GetModelMatrix();
+    else
+        MVP = projectionMatrix * viewMatrix * glm::mat4(1.0f);
+    glUniformMatrix4fv(MVP_ID, 1, GL_FALSE, &MVP[0][0]);
+
+    m_shader.Use();
     vao.Bind();
     vao.AddAttribute(positionAttrib);
     vao.AddAttribute(colorAttrib);
