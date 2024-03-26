@@ -2,6 +2,7 @@
 #include "TextureLoader.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "../../Vendor/stb/stb_image.h"
+#include <iostream>
 
 GLuint TextureLoader::LoadTexture(const char* filepath) {
     GLuint textureID;
@@ -30,7 +31,8 @@ GLuint TextureLoader::LoadTexture(const char* filepath) {
         glGenerateMipmap(GL_TEXTURE_2D);
     }
     else {
-        // Handle the error
+        std::cout << "Failed to load texture" << std::endl;
+        fprintf(stderr, "Failed to load image: %s\n", stbi_failure_reason());
     }
     stbi_image_free(data);
 

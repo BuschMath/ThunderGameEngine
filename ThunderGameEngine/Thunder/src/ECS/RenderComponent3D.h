@@ -16,5 +16,5 @@ struct RenderComponent3D : public Component {
         : vertices(verts), indices(inds), color(col) {}
 };
 
-#endif // RENDERCOMPONENT2D_H
+#endif // RENDERCOMPONENT3D_H
 

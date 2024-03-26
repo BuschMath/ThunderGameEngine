@@ -3,7 +3,7 @@
 
 #include "ComponentManager.h"
 #include "../Renderer/Shader.h"
-#include "RenderComponent3D.h"
+#include "RenderComponent.h"
 #include "TransformComponent.h"
 #include "CameraComponent.h"
 #include "../Renderer/VertexArray.h"

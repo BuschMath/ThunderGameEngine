@@ -142,6 +142,7 @@
     <ClInclude Include="Thunder\src\ECS\ComponentManager.h" />
     <ClInclude Include="Thunder\src\ECS\Entity.h" />
     <ClInclude Include="Thunder\src\ECS\EntityManager.h" />
+    <ClInclude Include="Thunder\src\ECS\RenderComponent.h" />
     <ClInclude Include="Thunder\src\ECS\RenderComponent2D.h" />
     <ClInclude Include="Thunder\src\ECS\RenderComponent3D.h" />
     <ClInclude Include="Thunder\src\ECS\RenderSystem.h" />
@@ -154,6 +155,8 @@
     <ClInclude Include="Thunder\src\Renderer\VertexAttribute.h" />
     <ClInclude Include="Thunder\src\Renderer\VertexBuffer.h" />
     <ClInclude Include="Thunder\src\Renderer\Window.h" />
+    <ClInclude Include="Thunder\src\Utility\Cube.h" />
+    <ClInclude Include="Thunder\src\Utility\TestCube.h" />
     <ClInclude Include="Thunder\src\Utility\TextureLoader.h" />
     <ClInclude Include="Thunder\Vendor\stb\stb_image.h" />
   </ItemGroup>
@@ -170,6 +173,8 @@
     <ClCompile Include="Thunder\src\Renderer\VertexAttribute.cpp" />
     <ClCompile Include="Thunder\src\Renderer\VertexBuffer.cpp" />
     <ClCompile Include="Thunder\src\Renderer\Window.cpp" />
+    <ClCompile Include="Thunder\src\Utility\Cube.cpp" />
+    <ClCompile Include="Thunder\src\Utility\TestCube.cpp" />
     <ClCompile Include="Thunder\src\Utility\TextureLoader.cpp" />
   </ItemGroup>
   <ItemGroup>

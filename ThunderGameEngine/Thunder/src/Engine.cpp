@@ -49,6 +49,27 @@ Entity Engine::CreateCamera(const glm::vec3& position, const glm::vec3& target, 
     return camera;
 }
 
+Entity Engine::CreateTestCube()
+{
+    TestCube cubeData;
+    Entity cube = CreateEntity();
+    AddComponent(cube, cubeData.GetRenderComponent());
+    AddComponent(cube, cubeData.GetTransformComponent());
+
+    return cube;
+}
+
+Entity Engine::CreateCube(const char* texturePath)
+{
+    TextureLoader textureLoader;
+    Cube cubeData(textureLoader.LoadTexture(texturePath));
+    Entity cube = CreateEntity();
+    AddComponent(cube, cubeData.GetRenderComponent());
+    AddComponent(cube, cubeData.GetTransformComponent());
+
+    return cube;
+}
+
 void Engine::Run()
 {
     glEnable(GL_DEPTH_TEST);

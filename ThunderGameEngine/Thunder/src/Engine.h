@@ -5,7 +5,9 @@
 #include "ECS/ComponentManager.h"
 #include "Renderer/Renderer.h"
 #include "Renderer/Window.h"
-
+#include "Utility/TextureLoader.h"
+#include "Utility/Cube.h"
+#include "Utility/TestCube.h"
 
 class Engine
 {
@@ -23,6 +25,9 @@ public:
 
 	Entity CreateCamera(const glm::vec3& position, const glm::vec3& target, const glm::vec3& up,
 		float fov, float aspectRatio, float nearClip, float farClip);
+
+	Entity CreateTestCube();
+	Entity CreateCube(const char* texturePath);
 
 	void Run();
 
